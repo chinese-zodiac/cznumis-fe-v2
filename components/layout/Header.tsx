@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
+import { texas } from '@/providers/BaseThemeProvider';
 
 const Header = () => {
   return (
@@ -22,8 +23,17 @@ const Header = () => {
       >
         <Toolbar>
           <Image src="/LSDT 1.png" width={78} height={78} alt="CZNumis Logo" />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, pl: 2 }}>
-            CZ Numismatic
+          <Typography
+            variant="h4"
+            component="div"
+            sx={(theme) => ({
+              flexGrow: 1,
+              pl: 2,
+              fontFamily: texas.style.fontFamily,
+              color: '#755A3B',
+            })}
+          >
+            CZ Numismatics
           </Typography>
           <Button variant="outlined" color="primary" sx={{ borderRadius: 4 }}>
             Connect
