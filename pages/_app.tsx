@@ -6,23 +6,25 @@ import { DAppProvider, BSC } from '@usedapp/core';
 const config = {
   readOnlyChainId: BSC.chainId,
   readOnlyUrls: {
-    [BSC.chainId]: 'https://bscrpc.com'
+    [BSC.chainId]: 'https://bscrpc.com',
   },
-  networks: [BSC]
-}
+  networks: [BSC],
+};
 
 function MyApp({ Component, pageProps }) {
   return (
     <DAppProvider config={config}>
       <Head>
-        <title>Numis.CZ.Cash | Collect rare US coinage with 1:1 backed NFTs.</title>
+        <title>
+          Numis.CZ.Cash | Collect rare US coinage with 1:1 backed NFTs.
+        </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <BaseThemeProvider>
         <Component {...pageProps} />
       </BaseThemeProvider>
     </DAppProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
