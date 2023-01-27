@@ -1,8 +1,10 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/system';
 import { Open_Sans } from '@next/font/google';
+import localFont from '@next/font/local';
 
 export const openSans = Open_Sans({ subsets: ['latin'] });
+export const texas = localFont({ src: '../public/fonts/TEXAT.otf' });
 
 export default function BaseThemeProvider({ children }) {
   const theme = responsiveFontSizes(
@@ -26,10 +28,18 @@ export default function BaseThemeProvider({ children }) {
         tonalOffset: 0.2,
       },
       typography: {
-        fontFamily: openSans.style.fontFamily,
+        fontFamily: [
+          openSans.style.fontFamily,
+          texas.style.fontFamily,
+          'sans-serif',
+        ].join(', '),
+
         h1: {
           fontSize: '2.25rem',
           fontWeight: 700,
+        },
+        body1: {
+          fontFamily: openSans.style.fontFamily,
         },
       },
     })
