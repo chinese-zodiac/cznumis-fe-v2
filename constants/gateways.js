@@ -1,0 +1,1 @@
+export const GATEWAYS_CZODIAC = "https://czodiac.mypinata.cloud";
