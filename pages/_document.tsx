@@ -1,4 +1,4 @@
-import { openSans } from '@/providers/BaseThemeProvider';
+import { openSans, texas } from '@/providers/BaseThemeProvider';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 //TODO: Add opengraph image
@@ -6,7 +6,7 @@ const OpenGraphImg = '';
 
 export default function Document() {
   return (
-    <Html lang="en" className={openSans.className}>
+    <Html lang="en" className={`${texas.className} ${openSans.className}`}>
       <Head>
         <meta
           name="description"
